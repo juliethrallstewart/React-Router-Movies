@@ -22,11 +22,13 @@ const MovieList = (props) => {
 		getMovies();
 	}, []);
 
+	console.log(movies);
+
 	return (
 		<div className="movie-list">
-			{movies.map((movie, index) => (
-				<Link to={`/movies/:id`}>
-					<MovieDetails key={index} movie={movie} />
+			{movies.map((movie) => (
+				<Link to={`/movies/${movie.id}`}>
+					<MovieDetails key={movie.id} movie={movie} />
 					{/* <MovieDetails key={movie.id} movie={movie} /> */}
 				</Link>
 			))}

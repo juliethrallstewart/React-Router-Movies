@@ -9,11 +9,10 @@ const Movie = (props) => {
 
 	useEffect(
 		() => {
-			const id = props.match.params.id;
 			// change ^^^ that line and grab the id from the URL
+			const id = props.match.params.id;
 			// You will NEED to add a dependency array to this effect hook
-			console.log(id);
-
+			console.log('Current ID: ', id);
 			axios
 				.get(`http://localhost:5000/api/movies/${id}`)
 				.then((response) => {
@@ -33,7 +32,6 @@ const Movie = (props) => {
 	//   const addToSavedList = props.addToSavedList;
 	//   addToSavedList(movie)
 	// }
-
 	if (!movie) {
 		return <div>Loading movie information...</div>;
 	}
